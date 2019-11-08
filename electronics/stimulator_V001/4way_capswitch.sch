@@ -116,4 +116,82 @@ Wire Wire Line
 	1650 3500 1600 3500
 Wire Wire Line
 	1600 3600 1650 3600
+$Comp
+L SquantorLogic:74XX4052 U?
+U 1 1 5DC5A804
+P 4750 2400
+F 0 "U?" H 4750 3015 50  0000 C CNN
+F 1 "74XX4052" H 4750 2924 50  0000 C CNN
+F 2 "" H 4750 2250 50  0001 C CNN
+F 3 "" H 4750 2250 50  0001 C CNN
+	1    4750 2400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5DC5B236
+P 4750 3000
+F 0 "C?" V 4800 3150 50  0000 C CNN
+F 1 "1u" V 4700 2900 50  0000 C CNN
+F 2 "" H 4788 2850 50  0001 C CNN
+F 3 "~" H 4750 3000 50  0001 C CNN
+	1    4750 3000
+	0    -1   -1   0   
+$EndComp
+Text Label 4550 3000 2    50   ~ 0
+VSS
+Text Label 4950 3000 0    50   ~ 0
+VDD
+Wire Wire Line
+	4550 3000 4600 3000
+Wire Wire Line
+	4900 3000 4950 3000
+Text Label 4300 2750 2    50   ~ 0
+VSS
+Wire Wire Line
+	4300 2750 4350 2750
+Wire Wire Line
+	4350 2750 4350 2650
+Wire Wire Line
+	4350 2650 4400 2650
+Wire Wire Line
+	4400 2750 4350 2750
+Connection ~ 4350 2750
+Text Label 5150 2050 0    50   ~ 0
+VDD
+Wire Wire Line
+	5100 2050 5150 2050
+Text Label 4350 2550 2    50   ~ 0
+OUT_EN
+Wire Wire Line
+	4400 2550 4350 2550
+Text Label 5150 2650 0    50   ~ 0
+OUT1_MUX0
+Text Label 5150 2750 0    50   ~ 0
+OUT1_MUX1
+Text Label 4350 2050 2    50   ~ 0
+OUT1
+Text Label 4350 2350 2    50   ~ 0
+VSOURCE
+Text Label 4350 2450 2    50   ~ 0
+ADC_OUT
+NoConn ~ 4400 2150
+Text Label 5150 2350 0    50   ~ 0
+VSS
+Wire Wire Line
+	5150 2350 5100 2350
+NoConn ~ 5100 2150
+NoConn ~ 5100 2250
+NoConn ~ 5100 2450
+NoConn ~ 5100 2550
+Wire Wire Line
+	5100 2650 5150 2650
+Wire Wire Line
+	5150 2750 5100 2750
+Wire Wire Line
+	4350 2450 4400 2450
+Wire Wire Line
+	4400 2350 4350 2350
+Wire Wire Line
+	4350 2050 4400 2050
 $EndSCHEMATC
