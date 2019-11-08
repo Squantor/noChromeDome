@@ -9,4 +9,4 @@ This repository contains documentation, mechanical, hardware and software design
 * Firmware: Contains source code for controlling the electronic components
 * Software: Contains source code/scripts for measurement data from the NCD device
 ## Checking out
-This project makes extensive use of submodules, use ```git clone --recurse-submodules https://github.com/Squantor/$(PROJECT).git``` to clone the repository and its submodules in one go.
+This project makes extensive use of submodules, use ```git clone --recurse-submodules https://github.com/Squantor/noChromeDome.git``` to clone the repository and its submodules in one go.
