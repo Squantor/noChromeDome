@@ -1,0 +1,18 @@
+# kicad backup files 
+*.bak
+*.kicad_pcb-bak
+*.net
+rescue-backup/
+_autosave*
+*.sch-bak
+
+# kicad ignorable generated files
+plots/
+plots-*/
+*_plots/
+*.zip
+
+#kicad caches
+fp-info-cache
+*-cache.lib
+

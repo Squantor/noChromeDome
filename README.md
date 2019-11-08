@@ -5,7 +5,7 @@ This paper describes a self powered device that uses electrical pulses to regrow
 This repository contains documentation, mechanical, hardware and software designs that I use in my experiments to recreate the paper. The structure of the repository is as follows:
 * Papers: Contains papers that have relevant information
 * Mechanical: Contains design files for mechanical components made in freecad
-* Electronics: Contains design files for electronic components, these are made with KiCad.
+* [Electronics](electronics/README.md): Contains design files for electronic components, these are made with KiCad.
 * Firmware: Contains source code for controlling the electronic components
 * Software: Contains source code/scripts for measurement data from the NCD device
 ## Checking out
