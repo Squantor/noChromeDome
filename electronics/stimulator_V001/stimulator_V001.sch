@@ -36,4 +36,40 @@ F 3 "" H 850 7350 60  0001 C CNN
 	1    850  7350
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	1000 1000 1050 1000
+$Comp
+L power:PWR_FLAG #FLG?
+U 1 1 5DC55C03
+P 1000 1000
+F 0 "#FLG?" H 1000 1075 50  0001 C CNN
+F 1 "PWR_FLAG" V 1000 1127 50  0000 L CNN
+F 2 "" H 1000 1000 50  0001 C CNN
+F 3 "~" H 1000 1000 50  0001 C CNN
+	1    1000 1000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:PWR_FLAG #FLG?
+U 1 1 5DC560C1
+P 1000 1150
+F 0 "#FLG?" H 1000 1225 50  0001 C CNN
+F 1 "PWR_FLAG" V 1000 1277 50  0000 L CNN
+F 2 "" H 1000 1150 50  0001 C CNN
+F 3 "~" H 1000 1150 50  0001 C CNN
+	1    1000 1150
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	1000 1150 1050 1150
+Text Label 1050 1000 0    50   ~ 0
+VSS
+Text Label 1050 1150 0    50   ~ 0
+VDD
+$Sheet
+S 3000 1500 1000 1500
+U 5DC56651
+F0 "4 way capacitor switch" 50
+F1 "4way_capswitch.sch" 50
+$EndSheet
 $EndSCHEMATC
