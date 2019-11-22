@@ -14,30 +14,12 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text HLabel 1600 1700 0    50   Input ~ 0
+Text HLabel 1600 1600 0    50   Input ~ 0
 VSS
-Text HLabel 1600 1800 0    50   Input ~ 0
+Text HLabel 1600 1700 0    50   Input ~ 0
 VDD
-Text HLabel 1600 1900 0    50   Input ~ 0
-VSOURCE
-Text HLabel 1600 2100 0    50   Input ~ 0
-OUT_EN
-Text HLabel 1600 2200 0    50   Input ~ 0
-OUT1_MUX0
-Text HLabel 1600 2300 0    50   Input ~ 0
-OUT1_MUX1
-Text HLabel 1600 2400 0    50   Input ~ 0
-OUT2_MUX0
-Text HLabel 1600 2500 0    50   Input ~ 0
-OUT2_MUX1
-Text HLabel 1600 2600 0    50   Input ~ 0
-OUT3_MUX0
-Text HLabel 1600 2700 0    50   Input ~ 0
-OUT3_MUX1
-Text HLabel 1600 2800 0    50   Input ~ 0
-OUT4_MUX0
-Text HLabel 1600 2900 0    50   Input ~ 0
-OUT4_MUX1
+Text HLabel 1600 1800 0    50   Input ~ 0
+VSOURCE1
 Text HLabel 1600 3200 0    50   Output ~ 0
 ADC_OUT
 Text HLabel 1600 3300 0    50   Output ~ 0
@@ -48,18 +30,18 @@ Text HLabel 1600 3500 0    50   Output ~ 0
 OUT3
 Text HLabel 1600 3600 0    50   Output ~ 0
 OUT4
-Text Label 1650 1700 0    50   ~ 0
+Text Label 1650 1600 0    50   ~ 0
 VSS
-Text Label 1650 1800 0    50   ~ 0
+Text Label 1650 1700 0    50   ~ 0
 VDD
-Text Label 1650 1900 0    50   ~ 0
-VSOURCE
+Text Label 1650 1800 0    50   ~ 0
+VSOURCE1
+Wire Wire Line
+	1600 1600 1650 1600
 Wire Wire Line
 	1600 1700 1650 1700
 Wire Wire Line
-	1600 1800 1650 1800
-Wire Wire Line
-	1650 1900 1600 1900
+	1650 1800 1600 1800
 Wire Wire Line
 	1600 2100 1650 2100
 Text Label 1650 2100 0    50   ~ 0
@@ -194,4 +176,28 @@ Wire Wire Line
 	4400 2350 4350 2350
 Wire Wire Line
 	4350 2050 4400 2050
+Text HLabel 1600 1900 0    50   Input ~ 0
+VSOURCE2
+Text Label 1650 1900 0    50   ~ 0
+VSOURCE2
+Wire Wire Line
+	1650 1900 1600 1900
+Text HLabel 1600 2100 0    50   Input ~ 0
+OUT_EN
+Text HLabel 1600 2900 0    50   Input ~ 0
+OUT4_MUX1
+Text HLabel 1600 2800 0    50   Input ~ 0
+OUT4_MUX0
+Text HLabel 1600 2700 0    50   Input ~ 0
+OUT3_MUX1
+Text HLabel 1600 2600 0    50   Input ~ 0
+OUT3_MUX0
+Text HLabel 1600 2500 0    50   Input ~ 0
+OUT2_MUX1
+Text HLabel 1600 2400 0    50   Input ~ 0
+OUT2_MUX0
+Text HLabel 1600 2300 0    50   Input ~ 0
+OUT1_MUX1
+Text HLabel 1600 2200 0    50   Input ~ 0
+OUT1_MUX0
 $EndSCHEMATC
