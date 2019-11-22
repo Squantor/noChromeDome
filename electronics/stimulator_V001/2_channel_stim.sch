@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 2 2
+Sheet 2 5
 Title ""
 Date ""
 Rev ""
@@ -43,7 +43,7 @@ V_In0
 Text HLabel 1000 1400 0    50   Input ~ 0
 V_In1
 Text HLabel 1000 950  0    50   Input ~ 0
-Enable
+!Enable
 Text HLabel 1000 1050 0    50   Input ~ 0
 MUX0
 Text HLabel 1000 1150 0    50   Input ~ 0
@@ -53,7 +53,7 @@ ADC0
 Text HLabel 1000 1600 0    50   Output ~ 0
 ADC1
 Text Label 1050 950  0    50   ~ 0
-Enable
+!Enable
 Text Label 1050 1050 0    50   ~ 0
 MUX0
 Text Label 1050 1150 0    50   ~ 0
@@ -81,10 +81,14 @@ Wire Wire Line
 Wire Wire Line
 	1000 1600 1050 1600
 $Comp
-L SquantorLogic:74XX4052 U?
+L SquantorLogic:74XX4052 U1
 U 1 1 5DD83554
 P 3000 1450
-F 0 "U?" H 3000 2065 50  0000 C CNN
+AR Path="/5DD7C17E/5DD83554" Ref="U1"  Part="1" 
+AR Path="/5DDF521D/5DD83554" Ref="U2"  Part="1" 
+AR Path="/5DE126B8/5DD83554" Ref="U3"  Part="1" 
+AR Path="/5DE126DB/5DD83554" Ref="U4"  Part="1" 
+F 0 "U1" H 3000 2065 50  0000 C CNN
 F 1 "74XX4052" H 3000 1974 50  0000 C CNN
 F 2 "" H 3000 1300 50  0001 C CNN
 F 3 "" H 3000 1300 50  0001 C CNN
@@ -92,10 +96,14 @@ F 3 "" H 3000 1300 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:C C?
+L Device:C C3
 U 1 1 5DD844EE
 P 3000 2400
-F 0 "C?" V 3050 2500 50  0000 C CNN
+AR Path="/5DD7C17E/5DD844EE" Ref="C3"  Part="1" 
+AR Path="/5DDF521D/5DD844EE" Ref="C6"  Part="1" 
+AR Path="/5DE126B8/5DD844EE" Ref="C9"  Part="1" 
+AR Path="/5DE126DB/5DD844EE" Ref="C12"  Part="1" 
+F 0 "C3" V 3050 2500 50  0000 C CNN
 F 1 "100n" V 2950 2250 50  0000 C CNN
 F 2 "SquantorRcl:C025-025X050" H 3038 2250 50  0001 C CNN
 F 3 "~" H 3000 2400 50  0001 C CNN
@@ -111,10 +119,14 @@ Wire Wire Line
 Text Label 2800 2400 2    50   ~ 0
 Electrode0_cap
 $Comp
-L Device:C C?
+L Device:C C4
 U 1 1 5DD89148
 P 3000 2600
-F 0 "C?" V 3050 2700 50  0000 C CNN
+AR Path="/5DD7C17E/5DD89148" Ref="C4"  Part="1" 
+AR Path="/5DDF521D/5DD89148" Ref="C7"  Part="1" 
+AR Path="/5DE126B8/5DD89148" Ref="C10"  Part="1" 
+AR Path="/5DE126DB/5DD89148" Ref="C13"  Part="1" 
+F 0 "C4" V 3050 2700 50  0000 C CNN
 F 1 "100n" V 2950 2450 50  0000 C CNN
 F 2 "SquantorRcl:C025-025X050" H 3038 2450 50  0001 C CNN
 F 3 "~" H 3000 2600 50  0001 C CNN
@@ -134,10 +146,14 @@ Electrode0_cap
 Text Label 3400 1400 0    50   ~ 0
 Electrode1_cap
 $Comp
-L Device:C C?
+L Device:C C2
 U 1 1 5DD8F565
 P 3000 2200
-F 0 "C?" V 3050 2300 50  0000 C CNN
+AR Path="/5DD7C17E/5DD8F565" Ref="C2"  Part="1" 
+AR Path="/5DDF521D/5DD8F565" Ref="C5"  Part="1" 
+AR Path="/5DE126B8/5DD8F565" Ref="C8"  Part="1" 
+AR Path="/5DE126DB/5DD8F565" Ref="C11"  Part="1" 
+F 0 "C2" V 3050 2300 50  0000 C CNN
 F 1 "10u" V 2950 2050 50  0000 C CNN
 F 2 "SquantorRcl:C_0603" H 3038 2050 50  0001 C CNN
 F 3 "~" H 3000 2200 50  0001 C CNN
@@ -187,10 +203,14 @@ Wire Wire Line
 Wire Wire Line
 	3350 1300 3400 1300
 $Comp
-L Device:R R?
+L Device:R R15
 U 1 1 5DD94CBE
 P 2450 1400
-F 0 "R?" V 2400 1200 50  0000 C CNN
+AR Path="/5DD7C17E/5DD94CBE" Ref="R15"  Part="1" 
+AR Path="/5DDF521D/5DD94CBE" Ref="R17"  Part="1" 
+AR Path="/5DE126B8/5DD94CBE" Ref="R19"  Part="1" 
+AR Path="/5DE126DB/5DD94CBE" Ref="R21"  Part="1" 
+F 0 "R15" V 2400 1200 50  0000 C CNN
 F 1 "10K" V 2450 1400 50  0000 C CNN
 F 2 "SquantorRcl:R_0805+0603" V 2380 1400 50  0001 C CNN
 F 3 "~" H 2450 1400 50  0001 C CNN
@@ -204,10 +224,14 @@ Electrode0
 Wire Wire Line
 	2300 1400 2200 1400
 $Comp
-L Device:R R?
+L Device:R R16
 U 1 1 5DD98A40
 P 3600 1600
-F 0 "R?" V 3550 1400 50  0000 C CNN
+AR Path="/5DD7C17E/5DD98A40" Ref="R16"  Part="1" 
+AR Path="/5DDF521D/5DD98A40" Ref="R18"  Part="1" 
+AR Path="/5DE126B8/5DD98A40" Ref="R20"  Part="1" 
+AR Path="/5DE126DB/5DD98A40" Ref="R22"  Part="1" 
+F 0 "R16" V 3550 1400 50  0000 C CNN
 F 1 "10K" V 3600 1600 50  0000 C CNN
 F 2 "SquantorRcl:R_0805+0603" V 3530 1600 50  0001 C CNN
 F 3 "~" H 3600 1600 50  0001 C CNN
@@ -225,7 +249,7 @@ MUX0
 Text Label 3400 1800 0    50   ~ 0
 MUX1
 Text Label 2600 1600 2    50   ~ 0
-Enable
+!Enable
 Wire Wire Line
 	2600 1600 2650 1600
 Wire Wire Line
