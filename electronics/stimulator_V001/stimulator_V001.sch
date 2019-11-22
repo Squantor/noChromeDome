@@ -19,7 +19,7 @@ L SquantorLabels:VYYYYMMDD N2
 U 1 1 5A1357A5
 P 850 7700
 F 0 "N2" H 850 7800 60  0000 C CNN
-F 1 "20191108" H 850 7700 60  0000 C CNN
+F 1 "20191122" H 850 7700 60  0000 C CNN
 F 2 "SquantorLabels:Label_version" H 850 7700 60  0001 C CNN
 F 3 "" H 850 7700 60  0001 C CNN
 	1    850  7700
@@ -102,53 +102,53 @@ Electrode002
 $Comp
 L Connector_Generic:Conn_01x08 J1
 U 1 1 5DD7E5AA
-P 750 2050
-F 0 "J1" H 668 1425 50  0000 C CNN
-F 1 "Conn_01x08" H 668 1516 50  0000 C CNN
-F 2 "" H 750 2050 50  0001 C CNN
-F 3 "~" H 750 2050 50  0001 C CNN
-	1    750  2050
+P 750 1900
+F 0 "J1" H 750 1400 50  0000 C CNN
+F 1 "Conn_01x08" H 750 2300 50  0000 C CNN
+F 2 "Connector_JST:JST_EH_B8B-EH-A_1x08_P2.50mm_Vertical" H 750 1900 50  0001 C CNN
+F 3 "~" H 750 1900 50  0001 C CNN
+	1    750  1900
 	-1   0    0    1   
 $EndComp
-Text Label 1000 2350 0    50   ~ 0
+Text Label 1000 2200 0    50   ~ 0
 Electrode001
-Text Label 1000 2250 0    50   ~ 0
+Text Label 1000 2100 0    50   ~ 0
 Electrode002
-Text Label 1000 2150 0    50   ~ 0
+Text Label 1000 2000 0    50   ~ 0
 Electrode003
-Text Label 1000 2050 0    50   ~ 0
+Text Label 1000 1900 0    50   ~ 0
 Electrode004
-Text Label 1000 1950 0    50   ~ 0
+Text Label 1000 1800 0    50   ~ 0
 Electrode005
-Text Label 1000 1850 0    50   ~ 0
+Text Label 1000 1700 0    50   ~ 0
 Electrode006
-Text Label 1000 1750 0    50   ~ 0
+Text Label 1000 1600 0    50   ~ 0
 Electrode007
-Text Label 1000 1650 0    50   ~ 0
+Text Label 1000 1500 0    50   ~ 0
 Electrode008
 Wire Wire Line
-	950  2350 1000 2350
+	950  2200 1000 2200
 Wire Wire Line
-	1000 2250 950  2250
+	1000 2100 950  2100
 Wire Wire Line
-	950  2150 1000 2150
+	950  2000 1000 2000
 Wire Wire Line
-	1000 2050 950  2050
+	1000 1900 950  1900
 Wire Wire Line
-	950  1950 1000 1950
+	950  1800 1000 1800
 Wire Wire Line
-	950  1850 1000 1850
+	950  1700 1000 1700
 Wire Wire Line
-	1000 1750 950  1750
+	1000 1600 950  1600
 Wire Wire Line
-	950  1650 1000 1650
+	950  1500 1000 1500
 $Comp
 L Connector_Generic:Conn_02x09_Odd_Even J2
 U 1 1 5DD9C595
 P 1650 4150
 F 0 "J2" H 1700 4650 50  0000 C CNN
 F 1 "Conn_02x08_Odd_Even" H 1700 3650 50  0000 C CNN
-F 2 "" H 1650 4150 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_2x09_P2.54mm_Vertical" H 1650 4150 50  0001 C CNN
 F 3 "~" H 1650 4150 50  0001 C CNN
 	1    1650 4150
 	1    0    0    -1  
