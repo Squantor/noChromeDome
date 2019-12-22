@@ -36,12 +36,12 @@ F 3 "" H 850 7350 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector_Generic:Conn_01x04 J?
+L Connector_Generic:Conn_01x04 J1
 U 1 1 5DFFF607
 P 950 1050
-F 0 "J?" H 868 1367 50  0000 C CNN
+F 0 "J1" H 868 1367 50  0000 C CNN
 F 1 "Conn_01x04" H 868 1276 50  0000 C CNN
-F 2 "Connector_JST:JST_PH_S4B-PH-SM4-TB_1x04-1MP_P2.00mm_Horizontal" H 950 1050 50  0001 C CNN
+F 2 "Connector_JST:JST_PH_B4B-PH-SM4-TB_1x04-1MP_P2.00mm_Vertical" H 950 1050 50  0001 C CNN
 F 3 "~" H 950 1050 50  0001 C CNN
 	1    950  1050
 	-1   0    0    -1  
@@ -63,47 +63,63 @@ Wire Wire Line
 Wire Wire Line
 	1200 1250 1150 1250
 $Comp
-L Connector_Generic:Conn_01x01 J?
+L Connector_Generic:Conn_01x01 J2
 U 1 1 5E001410
 P 950 1650
-F 0 "J?" H 950 1550 50  0000 C CNN
-F 1 "Conn_01x01" H 950 1750 50  0000 C CNN
-F 2 "" H 950 1650 50  0001 C CNN
+F 0 "J2" H 950 1550 50  0000 C CNN
+F 1 "Electrode_A1" H 950 1750 50  0000 C CNN
+F 2 "SquantorSpecial:hugepad_50X15hole" H 950 1650 50  0001 C CNN
 F 3 "~" H 950 1650 50  0001 C CNN
 	1    950  1650
 	-1   0    0    1   
 $EndComp
 $Comp
-L Connector_Generic:Conn_01x01 J?
+L Connector_Generic:Conn_01x01 J3
 U 1 1 5E001D70
 P 950 1950
-F 0 "J?" H 950 1850 50  0000 C CNN
-F 1 "Conn_01x01" H 950 2050 50  0000 C CNN
-F 2 "" H 950 1950 50  0001 C CNN
+F 0 "J3" H 950 1850 50  0000 C CNN
+F 1 "Electrode_B1" H 950 2050 50  0000 C CNN
+F 2 "SquantorSpecial:hugepad_50X15hole" H 950 1950 50  0001 C CNN
 F 3 "~" H 950 1950 50  0001 C CNN
 	1    950  1950
 	-1   0    0    1   
 $EndComp
 $Comp
-L Connector_Generic:Conn_01x01 J?
+L Connector_Generic:Conn_01x01 J4
 U 1 1 5E002221
 P 950 2250
-F 0 "J?" H 950 2150 50  0000 C CNN
-F 1 "Conn_01x01" H 950 2350 50  0000 C CNN
-F 2 "" H 950 2250 50  0001 C CNN
+F 0 "J4" H 950 2150 50  0000 C CNN
+F 1 "Electrode_A2" H 950 2350 50  0000 C CNN
+F 2 "SquantorSpecial:hugepad_50X15hole" H 950 2250 50  0001 C CNN
 F 3 "~" H 950 2250 50  0001 C CNN
 	1    950  2250
 	-1   0    0    1   
 $EndComp
 $Comp
-L Connector_Generic:Conn_01x01 J?
+L Connector_Generic:Conn_01x01 J5
 U 1 1 5E0025EA
 P 950 2550
-F 0 "J?" H 950 2450 50  0000 C CNN
-F 1 "Conn_01x01" H 950 2650 50  0000 C CNN
-F 2 "" H 950 2550 50  0001 C CNN
+F 0 "J5" H 950 2450 50  0000 C CNN
+F 1 "Electrode_B2" H 950 2650 50  0000 C CNN
+F 2 "SquantorSpecial:hugepad_50X15hole" H 950 2550 50  0001 C CNN
 F 3 "~" H 950 2550 50  0001 C CNN
 	1    950  2550
 	-1   0    0    1   
 $EndComp
+Text Label 1200 1650 0    50   ~ 0
+Electrode_A1
+Text Label 1200 1950 0    50   ~ 0
+Electrode_B1
+Text Label 1200 2250 0    50   ~ 0
+Electrode_A2
+Text Label 1200 2550 0    50   ~ 0
+Electrode_B2
+Wire Wire Line
+	1150 1650 1200 1650
+Wire Wire Line
+	1200 1950 1150 1950
+Wire Wire Line
+	1150 2250 1200 2250
+Wire Wire Line
+	1200 2550 1150 2550
 $EndSCHEMATC
