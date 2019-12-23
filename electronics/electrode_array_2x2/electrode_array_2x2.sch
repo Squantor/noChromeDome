@@ -24,28 +24,6 @@ F 3 "" H 850 7700 60  0001 C CNN
 	1    850  7700
 	1    0    0    -1  
 $EndComp
-$Comp
-L SquantorLabels:OHWLOGO N1
-U 1 1 5A135869
-P 850 7350
-F 0 "N1" H 850 7500 60  0000 C CNN
-F 1 "OHWLOGO" H 850 7200 60  0000 C CNN
-F 2 "Symbols:OSHW-Symbol_6.7x6mm_SilkScreen" H 850 7350 60  0001 C CNN
-F 3 "" H 850 7350 60  0001 C CNN
-	1    850  7350
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector_Generic:Conn_01x04 J1
-U 1 1 5DFFF607
-P 950 1050
-F 0 "J1" H 868 1367 50  0000 C CNN
-F 1 "Conn_01x04" H 868 1276 50  0000 C CNN
-F 2 "Connector_JST:JST_PH_B4B-PH-SM4-TB_1x04-1MP_P2.00mm_Vertical" H 950 1050 50  0001 C CNN
-F 3 "~" H 950 1050 50  0001 C CNN
-	1    950  1050
-	-1   0    0    -1  
-$EndComp
 Text Label 1200 950  0    50   ~ 0
 Electrode_A1
 Text Label 1200 1050 0    50   ~ 0
@@ -122,4 +100,15 @@ Wire Wire Line
 	1150 2250 1200 2250
 Wire Wire Line
 	1200 2550 1150 2550
+$Comp
+L Connector_Generic:Conn_01x04 J1
+U 1 1 5DFFF607
+P 950 1050
+F 0 "J1" H 868 1367 50  0000 C CNN
+F 1 "Conn_01x04" H 868 1276 50  0000 C CNN
+F 2 "Connector_JST:JST_PH_B4B-PH-K_1x04_P2.00mm_Vertical" H 950 1050 50  0001 C CNN
+F 3 "~" H 950 1050 50  0001 C CNN
+	1    950  1050
+	-1   0    0    -1  
+$EndComp
 $EndSCHEMATC
