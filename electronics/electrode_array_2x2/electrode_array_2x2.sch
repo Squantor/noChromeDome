@@ -18,7 +18,7 @@ L SquantorLabels:VYYYYMMDD N2
 U 1 1 5A1357A5
 P 850 7700
 F 0 "N2" H 850 7800 60  0000 C CNN
-F 1 "20191222" H 850 7700 60  0000 C CNN
+F 1 "20200419" H 850 7700 60  0000 C CNN
 F 2 "SquantorLabels:Label_version" H 850 7700 60  0001 C CNN
 F 3 "" H 850 7700 60  0001 C CNN
 	1    850  7700
@@ -46,7 +46,7 @@ U 1 1 5E001410
 P 950 1650
 F 0 "J2" H 950 1550 50  0000 C CNN
 F 1 "Electrode_A1" H 950 1750 50  0000 C CNN
-F 2 "SquantorSpecial:hugepad_50X15hole" H 950 1650 50  0001 C CNN
+F 2 "SquantorSpecial:hugepad_50X25hole" H 950 1650 50  0001 C CNN
 F 3 "~" H 950 1650 50  0001 C CNN
 	1    950  1650
 	-1   0    0    1   
@@ -57,7 +57,7 @@ U 1 1 5E001D70
 P 950 1950
 F 0 "J3" H 950 1850 50  0000 C CNN
 F 1 "Electrode_B1" H 950 2050 50  0000 C CNN
-F 2 "SquantorSpecial:hugepad_50X15hole" H 950 1950 50  0001 C CNN
+F 2 "SquantorSpecial:hugepad_50X25hole" H 950 1950 50  0001 C CNN
 F 3 "~" H 950 1950 50  0001 C CNN
 	1    950  1950
 	-1   0    0    1   
@@ -68,7 +68,7 @@ U 1 1 5E002221
 P 950 2250
 F 0 "J4" H 950 2150 50  0000 C CNN
 F 1 "Electrode_A2" H 950 2350 50  0000 C CNN
-F 2 "SquantorSpecial:hugepad_50X15hole" H 950 2250 50  0001 C CNN
+F 2 "SquantorSpecial:hugepad_50X25hole" H 950 2250 50  0001 C CNN
 F 3 "~" H 950 2250 50  0001 C CNN
 	1    950  2250
 	-1   0    0    1   
@@ -79,7 +79,7 @@ U 1 1 5E0025EA
 P 950 2550
 F 0 "J5" H 950 2450 50  0000 C CNN
 F 1 "Electrode_B2" H 950 2650 50  0000 C CNN
-F 2 "SquantorSpecial:hugepad_50X15hole" H 950 2550 50  0001 C CNN
+F 2 "SquantorSpecial:hugepad_50X25hole" H 950 2550 50  0001 C CNN
 F 3 "~" H 950 2550 50  0001 C CNN
 	1    950  2550
 	-1   0    0    1   
