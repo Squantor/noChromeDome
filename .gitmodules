@@ -4,3 +4,9 @@
 [submodule "software/libMcuLL"]
 	path = software/libMcuLL
 	url = https://github.com/Squantor/libMcuLL
+[submodule "software/squantorLibC"]
+	path = software/squantorLibC
+	url = https://github.com/Squantor/squantorLibC.git
+[submodule "software/squantorLibEmbeddedC"]
+	path = software/squantorLibEmbeddedC
+	url = https://github.com/Squantor/squantorLibEmbeddedC
