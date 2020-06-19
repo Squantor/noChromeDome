@@ -24,6 +24,12 @@ SOFTWARE.
 #ifndef BOARD_HPP
 #define BOARD_HPP
 
+#ifdef proto_V1_board
+#include <proto_V1_board.hpp>
+#else
+#error unknown board
+#endif
+
 void boardInit(void);
 
 #endif

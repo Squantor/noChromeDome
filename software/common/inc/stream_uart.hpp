@@ -1,7 +1,7 @@
 /*
 MIT License
 
-Copyright (c) 2020 Bart Bilos
+Copyright (c) 2019 Bart Bilos
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -21,16 +21,11 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
-#include <board.hpp>
-#include <stream_uart.hpp>
-#include <strings.hpp>
-#include <print.h>
+#ifndef STREAM_UART_HPP
+#define STREAM_UART_HPP
 
-int main()
-{
-    boardInit();
-    //dsPuts(&streamUart, strHello);
-    while (1) 
-    {
-    }
-}
+#include <datastream.h>
+
+extern const datastreamChar_t streamUart;
+
+#endif

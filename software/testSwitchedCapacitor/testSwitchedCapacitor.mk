@@ -24,6 +24,10 @@
 #
 # Version: 20200427
 
+# includes of additional libraries
+#include squantorLibC/squantorLibC.mk
+#include squantorLibEmbeddedC/squantorLibEmbeddedC.mk
+
 # project settings
 PROJECT = testSwitchedCapacitor
 MCU = LPC824M201JHI33
@@ -32,9 +36,11 @@ BOARD = proto_V1_board
 
 # project sources
 FILES += $(PROJECT)/src/main.cpp \
+$(PROJECT)/src/strings.cpp \
+common/src/stream_uart.cpp \
 $(PROJECT)/src/$(BOARD).cpp
 
 LIBS += -lgcc
-INCLUDES += -IlibMcuLL/inc -I$(PROJECT)/inc
+INCLUDES += -IlibMcuLL/inc -I$(PROJECT)/inc -IsquantorLibC/inc -IsquantorLibEmbeddedC/inc -Icommon/inc
 
 

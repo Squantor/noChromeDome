@@ -21,16 +21,16 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
-#include <board.hpp>
-#include <stream_uart.hpp>
-#include <strings.hpp>
-#include <print.h>
 
-int main()
+/*
+Central gathering place for systick handling
+*/
+
+#include <arm_systick.h>
+
+volatile timeTicks currentTicks = 0;
+
+void SysTick_Handler(void)
 {
-    boardInit();
-    //dsPuts(&streamUart, strHello);
-    while (1) 
-    {
-    }
+    currentTicks++;
 }

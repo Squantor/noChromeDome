@@ -21,16 +21,21 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
-#include <board.hpp>
-#include <stream_uart.hpp>
-#include <strings.hpp>
-#include <print.h>
+/*
+Simple delay class, just blocks and delays
+*/
+#ifndef DELAY_HPP
+#define DELAY_HPP
 
-int main()
+#include <arm_systick.h>
+
+class delay
 {
-    boardInit();
-    //dsPuts(&streamUart, strHello);
-    while (1) 
-    {
-    }
-}
+public:
+    delay(timeTicks duration);
+    void start(void);
+private:
+    const timeTicks Duration;
+};
+
+#endif

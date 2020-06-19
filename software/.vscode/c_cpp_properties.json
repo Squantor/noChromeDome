@@ -4,10 +4,14 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/testSwitchedCapacitor/inc",
-                "${workspaceFolder}/libMcuLL/inc/"
+                "${workspaceFolder}/libMcuLL/inc/",
+                "${workspaceFolder}/squantorLibC/inc/",
+                "${workspaceFolder}/squantorLibEmbeddedC/inc/",
+                "${workspaceFolder}/common/inc/"
             ],
             "defines": [
                 "MCU_LPC824M201JHI33",
+                "proto_V1_board",
                 "DEBUG"
             ],
             "browse": {

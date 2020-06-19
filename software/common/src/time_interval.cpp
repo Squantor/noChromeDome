@@ -21,16 +21,32 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
-#include <board.hpp>
-#include <stream_uart.hpp>
-#include <strings.hpp>
-#include <print.h>
+/*
+Time interval class to measure elapsing of defined time intervals
+*/
+#include <time_interval.hpp>
 
-int main()
+timeInterval::timeInterval(timeTicks duration) :
+Duration{duration}
 {
-    boardInit();
-    //dsPuts(&streamUart, strHello);
-    while (1) 
+    TriggerMoment = duration + currentTicks;
+}
+
+void timeInterval::reset(void)
+{
+    TriggerMoment = Duration + currentTicks;
+}
+
+
+bool timeInterval::elapsed(void)
+{
+    if(TriggerMoment > currentTicks)
     {
+        return false;
+    }
+    else
+    {
+        TriggerMoment = Duration + currentTicks;
+        return true;
     }
 }
