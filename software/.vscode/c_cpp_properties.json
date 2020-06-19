@@ -3,7 +3,7 @@
         {
             "name": "Linux",
             "includePath": [
-                "${workspaceFolder}/LPC824_example/inc",
+                "${workspaceFolder}/testSwitchedCapacitor/inc",
                 "${workspaceFolder}/libMcuLL/inc/"
             ],
             "defines": [
