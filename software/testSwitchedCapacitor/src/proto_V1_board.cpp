@@ -31,7 +31,12 @@ void boardInit(void)
     ClockEnablePeriphClock(SYSCTL_CLOCK_IOCON);
     SwmFixedPinEnable(SWM_FIXED_XTALIN, true);
     SwmFixedPinEnable(SWM_FIXED_XTALOUT, true);
+    SwmFixedPinEnable(SWM_FIXED_XTALOUT, true);
     IoconPinSetMode(LPC_IOCON, IOCON_XTAL_IN, PIN_MODE_INACTIVE);
     IoconPinSetMode(LPC_IOCON, IOCON_XTAL_OUT, PIN_MODE_INACTIVE);
+    IoconPinSetMode(LPC_IOCON, IOCON_MCLK_OUT, PIN_MODE_INACTIVE);
+    // setup clock output pin
+    SwmMovablePinAssign(SWM_CLKOUT_O, PIN_MCLK_OUT);
     ClockDisablePeriphClock(SYSCTL_CLOCK_SWM);
+    
 }

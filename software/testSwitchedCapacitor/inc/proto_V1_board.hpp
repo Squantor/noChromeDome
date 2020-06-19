@@ -24,7 +24,12 @@ SOFTWARE.
 #ifndef PROTO_V1_HPP
 #define PROTO_V1_HPP
 
+#include <mcu_ll.h>
+
 #define IOCON_XTAL_IN       IOCON_PIO8
 #define IOCON_XTAL_OUT      IOCON_PIO9
+
+#define IOCON_MCLK_OUT      IOCON_PIO26
+#define PIN_MCLK_OUT        (26u)
 
 #endif
