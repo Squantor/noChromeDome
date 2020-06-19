@@ -7,7 +7,7 @@
                 "${workspaceFolder}/libMcuLL/inc/"
             ],
             "defines": [
-                "LPC824M201JHI33",
+                "MCU_LPC824M201JHI33",
                 "DEBUG"
             ],
             "browse": {
