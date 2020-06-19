@@ -29,7 +29,7 @@ SOFTWARE.
 int main()
 {
     boardInit();
-    //dsPuts(&streamUart, strHello);
+    dsPuts(&streamUart, strHello);
     while (1) 
     {
     }

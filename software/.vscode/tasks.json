@@ -6,7 +6,7 @@
         {
             "label": "build testSwitchedCapacitor",
             "type": "shell",
-            "command": "make PROJECT=testSwitchedCapacitor",
+            "command": "make -j18 PROJECT=testSwitchedCapacitor",
             "group": {
                 "kind": "build",
                 "isDefault": true

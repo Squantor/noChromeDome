@@ -25,8 +25,8 @@
 # Version: 20200427
 
 # includes of additional libraries
-#include squantorLibC/squantorLibC.mk
-#include squantorLibEmbeddedC/squantorLibEmbeddedC.mk
+include squantorLibC/squantorLibC.mk
+include squantorLibEmbeddedC/squantorLibEmbeddedC.mk
 
 # project settings
 PROJECT = testSwitchedCapacitor
