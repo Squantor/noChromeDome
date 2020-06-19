@@ -33,10 +33,6 @@ void boardInit(void)
     SwmFixedPinEnable(SWM_FIXED_XTALOUT, true);
     IoconPinSetMode(LPC_IOCON, IOCON_XTAL_IN, PIN_MODE_INACTIVE);
     IoconPinSetMode(LPC_IOCON, IOCON_XTAL_OUT, PIN_MODE_INACTIVE);
-    IoconPinSetMode(LPC_IOCON, IOCON_MCLK_OUT, PIN_MODE_INACTIVE);
-    // setup clock output pin
-    SwmMovablePinAssign(SWM_CLKOUT_O, PIN_MCLK_OUT);
-    ClockSetCLKOUTSource(SYSCTL_CLKOUTSRC_MAINSYSCLK, 1);
     ClockDisablePeriphClock(SYSCTL_CLOCK_SWM);
 
     // setup clocking
@@ -51,7 +47,6 @@ void boardInit(void)
 	ClockSetupSystemPLL(4, 1);
 	SysctlPowerUp(SYSCTL_SLPWAKE_SYSPLL_PD);
 
-	/* Wait for PLL to lock */
 	while (!ClockIsSystemPLLLocked())
         ;
     // divide clock down from 60MHz to 30
