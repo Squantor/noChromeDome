@@ -33,7 +33,12 @@ SOFTWARE.
 #define IOCON_XTAL_IN       IOCON_PIO8
 #define IOCON_XTAL_OUT      IOCON_PIO9
 
-#define IOCON_MCLK_OUT      IOCON_PIO26
-#define PIN_MCLK_OUT        (26u)
+#define IOCON_UART_TX       IOCON_PIO26
+#define PIN_UART_TX         (26u)
+#define IOCON_UART_RX       IOCON_PIO27
+#define PIN_UART_RX         (27u)
+
+#define UART_DEBUG          LPC_USART0
+#define UART_DEBUG_SPEED    (115200u)
 
 #endif

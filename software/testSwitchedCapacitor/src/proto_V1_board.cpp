@@ -29,10 +29,17 @@ void boardInit(void)
 {
     ClockEnablePeriphClock(SYSCTL_CLOCK_SWM);
     ClockEnablePeriphClock(SYSCTL_CLOCK_IOCON);
+    ClockEnablePeriphClock(SYSCTL_CLOCK_GPIO);
+    // crystal oscillator pin setup
     SwmFixedPinEnable(SWM_FIXED_XTALIN, true);
     SwmFixedPinEnable(SWM_FIXED_XTALOUT, true);
     IoconPinSetMode(LPC_IOCON, IOCON_XTAL_IN, PIN_MODE_INACTIVE);
     IoconPinSetMode(LPC_IOCON, IOCON_XTAL_OUT, PIN_MODE_INACTIVE);
+    // uart pin setup
+    IoconPinSetMode(LPC_IOCON, IOCON_UART_RX, PIN_MODE_PULLUP);
+    IoconPinSetMode(LPC_IOCON, IOCON_UART_TX, PIN_MODE_INACTIVE);
+    SwmMovablePinAssign(SWM_U0_TXD_O, PIN_UART_TX);
+    SwmMovablePinAssign(SWM_U0_RXD_I, PIN_UART_RX);
     ClockDisablePeriphClock(SYSCTL_CLOCK_SWM);
 
     // setup clocking
@@ -53,5 +60,13 @@ void boardInit(void)
 	ClockSetSysClockDiv(2);
 	// switch main clock source to the system PLL. 
 	ClockSetMainClockSource(SYSCTL_MAINCLKSRC_PLLOUT);
+
+    // setup debug output uart
+    //UartInit(UART_DEBUG);
+    //UartConfigData(UART_DEBUG, UART_CFG_DATALEN_8 | UART_CFG_PARITY_NONE | UART_CFG_STOPLEN_1);
+    //ClockSetUSARTNBaseClockRate((UART_DEBUG_SPEED * 16), true);
+    //UartSetBaud(UART_DEBUG, UART_DEBUG_SPEED);
+    UartEnable(UART_DEBUG);
+    UartTXEnable(UART_DEBUG);
     
 }
