@@ -31,12 +31,32 @@ void boardInit(void)
     ClockEnablePeriphClock(SYSCTL_CLOCK_IOCON);
     SwmFixedPinEnable(SWM_FIXED_XTALIN, true);
     SwmFixedPinEnable(SWM_FIXED_XTALOUT, true);
-    SwmFixedPinEnable(SWM_FIXED_XTALOUT, true);
     IoconPinSetMode(LPC_IOCON, IOCON_XTAL_IN, PIN_MODE_INACTIVE);
     IoconPinSetMode(LPC_IOCON, IOCON_XTAL_OUT, PIN_MODE_INACTIVE);
     IoconPinSetMode(LPC_IOCON, IOCON_MCLK_OUT, PIN_MODE_INACTIVE);
     // setup clock output pin
     SwmMovablePinAssign(SWM_CLKOUT_O, PIN_MCLK_OUT);
+    ClockSetCLKOUTSource(SYSCTL_CLKOUTSRC_MAINSYSCLK, 1);
     ClockDisablePeriphClock(SYSCTL_CLOCK_SWM);
+
+    // setup clocking
+	ClockSetPLLBypass(false, false);
+	// Turn on the crystal(system) oscillator
+	SysctlPowerUp(SYSCTL_SLPWAKE_SYSOSC_PD);
+	// set pll input to crystal(system) oscillator
+	ClockSetSystemPLLSource(SYSCTL_PLLCLKSRC_SYSOSC);
+	FmcSetFlashAccess(FLASHTIM_30MHZ_CPU);
+	SysctlPowerDown(SYSCTL_SLPWAKE_SYSPLL_PD);
+	// Setup PLL to ((FCLKIN = 12MHz) * 5)/2 = 30MHz
+	ClockSetupSystemPLL(4, 1);
+	SysctlPowerUp(SYSCTL_SLPWAKE_SYSPLL_PD);
+
+	/* Wait for PLL to lock */
+	while (!ClockIsSystemPLLLocked())
+        ;
+    // divide clock down from 60MHz to 30
+	ClockSetSysClockDiv(2);
+	// switch main clock source to the system PLL. 
+	ClockSetMainClockSource(SYSCTL_MAINCLKSRC_PLLOUT);
     
 }
