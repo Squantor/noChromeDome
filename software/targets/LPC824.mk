@@ -22,13 +22,13 @@
 
 # settings for the LPC824 Microcontroller
 #
-# Version: 20200427
+# Version: 20200619
 
 # import compiler settings for the core in this microcontroller
 include targets/core_CortexM0plus.mk
 
 # Specific C files and linker scripts
-FILES += targets/LPC824.cpp targets/startup.cpp
+FILES += targets/LPC824.cpp targets/startup_LPC82X.cpp targets/LPC82X_aeabi_romdiv_patch.s
 DEFINES += -DMCU_$(MCU)
 LDSCRIPT = -T"targets/LPC824.ld"
 
