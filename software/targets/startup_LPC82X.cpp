@@ -92,6 +92,7 @@ void Reset_Handler(void)
         initFunc++;
     }
 
+
     // Get address of Integer division routines function table in ROM
     unsigned int *div_ptr = (unsigned int *)((unsigned int *)*(PTR_ROM_DRIVER_TABLE))[4];
     // Get addresses of integer divide routines in ROM

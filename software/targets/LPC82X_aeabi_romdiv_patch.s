@@ -32,7 +32,6 @@
 // copyright, permission, and disclaimer notice must appear in all copies of
 // this code.
 //*****************************************************************************
-#if defined(__USE_ROMDIVIDE)
 
 // Note that the romdivide "divmod" functions are not actually called from
 // the below code, as these functions are actually just wrappers to the
@@ -90,4 +89,3 @@ __aeabi_uidiv:
 
 	.endfunc
 
-#endif // (__USE_ROMDIVIDE)

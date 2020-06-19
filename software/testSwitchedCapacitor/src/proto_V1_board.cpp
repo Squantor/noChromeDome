@@ -62,11 +62,10 @@ void boardInit(void)
 	ClockSetMainClockSource(SYSCTL_MAINCLKSRC_PLLOUT);
 
     // setup debug output uart
-    //UartInit(UART_DEBUG);
-    //UartConfigData(UART_DEBUG, UART_CFG_DATALEN_8 | UART_CFG_PARITY_NONE | UART_CFG_STOPLEN_1);
-    //ClockSetUSARTNBaseClockRate((UART_DEBUG_SPEED * 16), true);
-    //UartSetBaud(UART_DEBUG, UART_DEBUG_SPEED);
+    UartInit(UART_DEBUG);
+    UartConfigData(UART_DEBUG, UART_CFG_DATALEN_8 | UART_CFG_PARITY_NONE | UART_CFG_STOPLEN_1);
+    ClockSetUSARTNBaseClockRate((UART_DEBUG_SPEED * 16), true);
+    UartSetBaud(UART_DEBUG, UART_DEBUG_SPEED);
     UartEnable(UART_DEBUG);
     UartTXEnable(UART_DEBUG);
-    
 }
