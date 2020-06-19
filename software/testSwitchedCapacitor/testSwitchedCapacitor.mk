@@ -28,7 +28,7 @@
 PROJECT = testSwitchedCapacitor
 MCU = LPC824M201JHI33
 TARGET = MCU
-BOARD = dummy_board
+BOARD = proto_V1_board
 
 # project sources
 FILES += $(PROJECT)/src/main.cpp \
