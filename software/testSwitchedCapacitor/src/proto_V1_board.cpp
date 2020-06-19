@@ -22,8 +22,16 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 #include <proto_V1_board.hpp>
+#include <board.hpp>
+#include <mcu_ll.h>
 
 void boardInit(void)
 {
-    
+    ClockEnablePeriphClock(SYSCTL_CLOCK_SWM);
+    ClockEnablePeriphClock(SYSCTL_CLOCK_IOCON);
+    SwmFixedPinEnable(SWM_FIXED_XTALIN, true);
+    SwmFixedPinEnable(SWM_FIXED_XTALOUT, true);
+    IoconPinSetMode(LPC_IOCON, IOCON_XTAL_IN, PIN_MODE_INACTIVE);
+    IoconPinSetMode(LPC_IOCON, IOCON_XTAL_OUT, PIN_MODE_INACTIVE);
+    ClockDisablePeriphClock(SYSCTL_CLOCK_SWM);
 }

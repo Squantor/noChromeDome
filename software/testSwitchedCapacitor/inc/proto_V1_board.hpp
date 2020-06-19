@@ -24,6 +24,7 @@ SOFTWARE.
 #ifndef PROTO_V1_HPP
 #define PROTO_V1_HPP
 
-void boardInit(void);
+#define IOCON_XTAL_IN       IOCON_PIO8
+#define IOCON_XTAL_OUT      IOCON_PIO9
 
 #endif
