@@ -22,7 +22,7 @@
 
 # settings for the MCU target
 #
-# Version: 20200427
+# Version: 20200625
 
 ifndef MCU
 $(error MCU is not defined!)
@@ -45,4 +45,5 @@ LDFLAGS +=  -nostdlib -Wl,--gc-sections -Wl,-print-memory-usage
 DEFINES += -D$(BOARD)
 DEFINES_release += -DNDEBUG
 DEFINES_debug += -DDEBUG
+LIBS += -lgcc
 

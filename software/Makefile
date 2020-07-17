@@ -23,10 +23,19 @@
 # Generic project makefile
 # Heavily inspired by: https://github.com/bronson/makefile-death
 #
-# Version: 20200425
+# Version: 20200712
 
 # Project settings like sources and target specifics
-include project.mk
+ifndef PROJECT
+$(error no PROJECT defined!)
+else
+ifneq ("$(wildcard $(PROJECT)/$(PROJECT).mk)","")
+include $(PROJECT)/$(PROJECT).mk
+else
+$(error $(PROJECT)/$(PROJECT).mk does not exist!)
+endif
+endif
+
 
 # Target definition handling
 ifndef TARGET
@@ -36,14 +45,87 @@ include targets/$(TARGET).mk
 endif
 
 # build engine
-include build.mk
+# Configuration management
+# load first config as default configuration
+CONFIG ?= $(firstword $(CONFIGS))
+# check if it is a valid configuration
+ifeq (, $(findstring $(CONFIG),$(CONFIGS)))
+$(error Unknown configuration $(CONFIG)!)
+endif
+
+# transform build specific variables to variables used by the build
+COPYVARS += SOURCE CFLAGS CXXFLAGS INCLUDES LIBS DEFINES
+$(foreach V,$(COPYVARS),$(eval $(V) += $$($(V)_$(CONFIG))))
+# specific handling for linker script
+LDFLAGS += $(LDSCRIPT)
+# add defines to flags
+CFLAGS += $(DEFINES)
+CXXFLAGS += $(DEFINES)
+ASMFLAGS += $(DEFINES)
+
+# for a multi project build pipeline
+ifdef PROJECT
+BIN_PATH := bin/$(PROJECT)/$(CONFIG)
+OBJ_PATH := build/$(PROJECT)/$(CONFIG)
+EXECUTABLE := $(BIN_PATH)/$(PROJECT).elf
+SIZELOG_PATH := $(PROJECT)/
+else
+BIN_PATH := bin/$(CONFIG)
+OBJ_PATH := build/$(CONFIG)
+EXECUTABLE := $(BIN_PATH)/$(PROJECT).elf
+endif
+
+# create lists of prerequisites for the build
+OBJECTS += $(addprefix $(OBJ_PATH)/, $(addsuffix .o,$(FILES)))
+DEPS = $(OBJECTS:.o=.d)
+COMMONDEPS+= $(OBJ_PATH)/build-tag $(BIN_PATH)/build-tag
+
+all: post-build
+
+main-build: pre-build $(EXECUTABLE)
+	
+.PHONY: all
+
+-include $(DEPS)
+
+$(BIN_PATH)/build-tag:
+	$(MKDIR) -p $(BIN_PATH)
+	$(TOUCH) $@
+
+$(OBJ_PATH)/build-tag:
+	$(MKDIR) -p $(OBJ_PATH)
+	$(TOUCH) $@
+
+$(EXECUTABLE): $(OBJECTS)
+	$(TOOLCHAIN_PREFIX)$(CXX_COMPILER) $(LDFLAGS) $(OBJECTS) -Xlinker -Map="$@.map" -o $@ $(LIBS)
+	date >> $(SIZELOG_PATH)size$(CONFIG).log
+	$(TOOLCHAIN_PREFIX)$(SIZE) $@ >> $(SIZELOG_PATH)size$(CONFIG).log
+	$(TOOLCHAIN_PREFIX)$(OBJCOPY) -R .stack -O binary $@ $(BIN_PATH)/$(PROJECT).bin
+	$(TOOLCHAIN_PREFIX)$(OBJDUMP) -h -S "$@" > "$(BIN_PATH)/$(PROJECT).lss"
+
+$(OBJ_PATH)/%.c.o: %.c $(COMMONDEPS)
+	$(MKDIR) -p $(dir $@) 
+	$(TOOLCHAIN_PREFIX)$(C_COMPILER) $(CFLAGS) $(INCLUDES) -MP -MMD -c $< -o $@
+
+$(OBJ_PATH)/%.cpp.o: %.cpp $(COMMONDEPS)
+	$(MKDIR) -p $(dir $@) 
+	$(TOOLCHAIN_PREFIX)$(CXX_COMPILER) $(CXXFLAGS) $(INCLUDES) -MP -MMD -c $< -o $@
+
+$(OBJ_PATH)/%.s.o: %.s $(COMMONDEPS)
+	$(MKDIR) -p $(dir $@) 
+	$(TOOLCHAIN_PREFIX)$(C_COMPILER) $(ASMFLAGS) $(INCLUDES) -MP -MMD -c $< -o $@
+
+clean: $(COMMONDEPS)
+	$(RM) -r bin
+	$(RM) -r build
+.PHONY: clean
 
 # project specific makefile rules
-include prj_rules.mk
+include $(PROJECT)/$(PROJECT)_rules.mk
 
 # Function used to check variables. Use on the command line:
 # make print-VARNAME
-# Useful for debugging and adding features
+# Useful for debugging
 print-%: ; @echo $*=$($*)
 .Phony: print-%
 

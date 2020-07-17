@@ -22,14 +22,13 @@
 
 # project settings
 #
-# Version: 20200427
+# Version: 20200625
 
 # includes of additional libraries
 include squantorLibC/squantorLibC.mk
 include squantorLibEmbeddedC/squantorLibEmbeddedC.mk
 
 # project settings
-PROJECT = testSwitchedCapacitor
 MCU = LPC824M201JHI33
 TARGET = MCU
 BOARD = proto_V1_board
@@ -40,7 +39,6 @@ $(PROJECT)/src/strings.cpp \
 common/src/stream_uart.cpp \
 $(PROJECT)/src/$(BOARD).cpp
 
-LIBS += -lgcc
 INCLUDES += -IlibMcuLL/inc -I$(PROJECT)/inc -IsquantorLibC/inc -IsquantorLibEmbeddedC/inc -Icommon/inc
 
 
