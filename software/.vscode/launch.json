@@ -5,6 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Debug Microcontroller",
+            "cwd": "${workspaceFolder}",
+            "executable": "${workspaceFolder}/bin/testSwitchedCapacitor/debug/testSwitchedCapacitor.elf",
+            "request": "launch",
+            "runToMain": true,
+            "type": "cortex-debug",
+            "servertype": "bmp",
+            "BMPGDBSerialPort": "/dev/ttyBmpGdb0",
+            "targetId": 1
+        },
+
+        {
             "name": "debug testSwitchedCapacitor",
             "type": "cppdbg",
             "request": "launch",

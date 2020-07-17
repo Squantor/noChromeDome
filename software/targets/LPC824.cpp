@@ -36,5 +36,5 @@ void Dummy_Handler(void);
 #include "isr_lpc82X.cpp"
 
 void Dummy_Handler(void) {
-    while (1);
+    __asm volatile ("bkpt 0");
 }

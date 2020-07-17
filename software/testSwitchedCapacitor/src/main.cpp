@@ -24,13 +24,29 @@ SOFTWARE.
 #include <board.hpp>
 #include <stream_uart.hpp>
 #include <strings.hpp>
+#include <cmdline_prompt.h>
 #include <print.h>
+
+char cmdPromptStringBuffer[64];
+t_queueString cmdPromptStringQueue = {
+    .mask = sizeof(cmdPromptStringBuffer)-1,
+    .head = 0,
+    .tail = 0,
+    .data = cmdPromptStringBuffer,
+    };
+
+result commandOutput(char *cmdline)
+{
+    dsPuts(&streamUart, cmdline);
+}
 
 int main()
 {
     boardInit();
     dsPuts(&streamUart, strHello);
+    cmdlinePromptInit(&cmdPromptStringQueue);
     while (1) 
     {
+        cmdlinePromptProcess(&streamUart, commandOutput);
     }
 }
