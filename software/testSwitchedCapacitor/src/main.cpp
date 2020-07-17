@@ -38,6 +38,7 @@ t_queueString cmdPromptStringQueue = {
 result commandOutput(char *cmdline)
 {
     dsPuts(&streamUart, cmdline);
+    return noError;
 }
 
 int main()
