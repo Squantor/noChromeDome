@@ -45,3 +45,7 @@ bin/
 #miscellanious generated files
 *.log
 
+#ignore eclipse specific files, I sometimes use McuXpresso for some features
+.project
+.cproject
+.settings/
